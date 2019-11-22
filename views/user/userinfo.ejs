@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reboot.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/userinfo.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('../layout/layout.ejs')%>
+        <div class="container">
+            <%- include('../layout/left.ejs')%>
+            <div class="main">
+                <div class="info">
+                    <div class="left-info">
+                        <span class="user-info-img"></span>
+                    </div>
+                    <div class="right-info">
+                        <ul>
+                            <li>
+                                <span class="biaoq">用户ID: </span>
+                                <span class="info-val"><%= userinfo.userid%></span>
+                            </li>
+                            <li>
+                                <span class="biaoq">用户名: </span>
+                                <span class="info-val"><%= userinfo.username%></span>
+                            </li>
+                            <li>
+                                <span class="biaoq">用户电话: </span>
+                                <span class="info-val"><%= userinfo.phone%></span>
+                            </li>
+                            <li>
+                                <span class="biaoq">用户邮箱: </span>
+                                <span class="info-val"><%= userinfo.mail%></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="middfy-info">
+                    <h2>修改密码</h2>
+                    <div class="head-green">
+
+                    </div>
+                    <div class="success">
+                        <span class="success-info"></span>
+                        <span class="text">修改成功</span>
+                    </div>
+                    <div class="submit-data">
+                        <div class="item">
+                            <input type="password" placeholder="请输入原有密码" name="" class="modify-pwd" id="">
+                        </div>
+                        <div class="item">
+                            <input type="password" placeholder="请输入新的密码" class="modify-pwd" name="" id="">
+                        </div>
+                        <div class="item">
+                            <input type="password" placeholder="请再次输入新的密码" class="modify-pwd" name="" id="">
+                        </div>
+                        <div class="item-btn">
+                            <button class="btn shure">确定</button>
+                            <button class="btn reboot">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/means.js"></script>
+    <script src="../js/userinfo.js"></script>
+</body>
+
+</html>

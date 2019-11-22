@@ -1,0 +1,1 @@
+[{"username":"admin","device":[]},{"username":"sa","device":[{"createtime":"2019-10-14 10:14:29","deviceid":"8213","devicename":"001","sensorModel":[{"sensorname":"温度","sensorident":"temp","sensordatatype":"数值型","sensorid":"3527","isTagData":{"state":false,"odds":""}}],"data":[]}]}]

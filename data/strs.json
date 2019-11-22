@@ -1,0 +1,213 @@
+[
+    {
+        "username":"admin",
+        "device":[
+            {
+                "devicename":"运输车001",
+                "deviceid":"1532",
+                "strategy":[
+                    {
+                        "strategyid":"8420",
+                        "isOpen":true,
+                        "type":"control",
+                        "createTime":"2019-11-19 9:28",
+                        "times":{
+                            "isEveryOnce":true,
+                            "time":"2019-11-19 10:00"
+                        },
+                        "sensors":[
+                             {
+                                 "sensorname":"火焰",
+                                 "sensorident":"fire",
+                                 "odds":"a===1"
+                             }
+                        ],
+                        "control":[
+                            {
+                               "cz":"open",
+                               "actuatname":"风扇",
+                               "actuatident":"FAN",
+                               "cmd":"AT/CLOSE" 
+                            }
+                        ]
+                    },
+                    {
+                        "strategyid":"8520",
+                        "isOpen":true,
+                        "type":"tag",
+                        "createTime":"2019-11-19 9:28",
+                        "sensors":[
+                            {
+                                "sensorname":"火焰",
+                                "sensorident":"fire",
+                                "odds":"a===1"
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        ]
+    }
+]
+
+[
+    {
+        "username": "admin",
+        "device": [
+            {
+                "createtime": "2019-10-11 20:56:27",
+                "deviceid": "5269",
+                "devicename": "智慧城市",
+                "sensorModel": [
+                    {
+                        "sensorname": "温度",
+                        "sensorident": "temp",
+                        "sensordatatype": "数值型",
+                        "sensorid": "3242",
+                        "isTagData": {
+                            "state": true,
+                            "odds": "a>20"
+                        }
+                    },
+                    {
+                        "sensorname": "湿度",
+                        "sensorident": "humi",
+                        "sensordatatype": "数值型",
+                        "sensorid": "6236",
+                        "isTagData": {
+                            "state": true,
+                            "odds": "a>40"
+                        }
+                    },
+                    {
+                        "sensorname": "火焰",
+                        "sensorident": "fire",
+                        "sensordatatype": "布尔值",
+                        "sensorid": "9408",
+                        "isTagData": {
+                            "state": true,
+                            "odds": "a===1"
+                        }
+                    },
+                    {
+                        "sensorname": "烟雾",
+                        "sensorident": "smoke",
+                        "sensordatatype": "布尔值",
+                        "sensorid": "3487",
+                        "isTagData": {
+                            "state": true,
+                            "odds": "a===1"
+                        }
+                    },
+                    {
+                        "sensorname": "GPS定位",
+                        "sensorident": "position",
+                        "sensordatatype": "数值型",
+                        "sensorid": "4468",
+                        "isTagData": {
+                            "state": false,
+                            "odds": ""
+                        }
+                    }
+                ],
+                "data": []
+            },
+            {
+                "createtime": "2019-10-11 21:49:27",
+                "deviceid": "5830",
+                "devicename": "City",
+                "sensorModel": [
+                    {
+                        "sensorname": "烟雾",
+                        "sensorident": "somke",
+                        "sensordatatype": "布尔值",
+                        "sensorid": "2653"
+                    }
+                ],
+                "data": []
+            },
+            {
+                "createtime": "2019-10-16 12:44:8",
+                "deviceid": "3436",
+                "devicename": "运输车001",
+                "sensorModel": [
+                    {
+                        "sensorname": "温度",
+                        "sensorident": "temperature",
+                        "sensordatatype": "数值型",
+                        "sensorid": "2084",
+                        "isTagData": {
+                            "state": true,
+                            "odds": "a>50"
+                        }
+                    },
+                    {
+                        "sensorname": "湿度",
+                        "sensorident": "humidity",
+                        "sensordatatype": "数值型",
+                        "sensorid": "7424",
+                        "isTagData": {
+                            "state": false,
+                            "odds": ""
+                        }
+                    },
+                    {
+                        "sensorname": "火焰",
+                        "sensorident": "fire",
+                        "sensordatatype": "布尔值",
+                        "sensorid": "4310",
+                        "isTagData": {
+                            "state": false,
+                            "odds": ""
+                        }
+                    },
+                    {
+                        "sensorname": "烟雾",
+                        "sensorident": "smoking",
+                        "sensordatatype": "布尔值",
+                        "sensorid": "5906",
+                        "isTagData": {
+                            "state": false,
+                            "odds": ""
+                        }
+                    },
+                    {
+                        "sensorname": "GPS定位",
+                        "sensorident": "position",
+                        "sensordatatype": "数值型",
+                        "sensorid": "7289",
+                        "isTagData": {
+                            "state": false,
+                            "odds": ""
+                        }
+                    }
+                ],
+                "data": []
+            }
+        ]
+    },
+    {
+        "username": "sa",
+        "device": [
+            {
+                "createtime": "2019-10-14 10:14:29",
+                "deviceid": "8213",
+                "devicename": "001",
+                "sensorModel": [
+                    {
+                        "sensorname": "温度",
+                        "sensorident": "temp",
+                        "sensordatatype": "数值型",
+                        "sensorid": "3527",
+                        "isTagData": {
+                            "state": false,
+                            "odds": ""
+                        }
+                    }
+                ],
+                "data": []
+            }
+        ]
+    }
+]

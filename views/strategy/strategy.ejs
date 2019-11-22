@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reboot.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/strategy.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('../layout/layout.ejs')%>
+        <div class="container">
+            <%- include('../layout/left.ejs')%>
+            <div class="main">
+                <div class="feature">
+                    <div class="btn-column">
+                        
+                                <button class="btn btn-add-device"><span class="btn-icon add"></span> <a href="/strategy/toAddStrategyPage">新增策略</a></button>
+                        <button class="btn btn-delete all"><span class="btn-icon delete"></span>删除策略</button>
+                    </div>
+                    <div class="search-column">
+                        <select name="" id="" class="select screen strategy-type">
+                            <option value="all">==根据策略类型选择==</option>
+                            <option value="control">设备控制</option>
+                            <option value="tag">数据标记</option>
+                        </select>
+                        <select name="" id="" class="select screen device-name">
+                            <option value="all">==根据设备选择==</option>
+                            <option value="control">智慧城市</option>
+                            <option value="tag">运输车001</option>
+                        </select>
+                        <div class="much-select screen">
+                                <input type="text" name="" class="screen-input" id="" placeholder="请输入设备ID,策略ID 检索">
+                            </div>
+                    </div>
+                </div>
+                <div class="default-style home-style hidden">
+                        <span>没有策略添加策略吧</span>
+                </div>
+                <div class="strategy-list">
+                    <ul class="strategy-ul">
+                       
+                    </ul>
+                </div>
+                <div class="pager">
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/means.js"></script>
+    <script src="../js/strategy.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../css/reboot.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/strategyadd.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('../layout/layout.ejs')%>
+        <div class="container">
+            <%- include('../layout/left.ejs')%>
+            <div class="main">
+                <div class="feature">
+                    <div class="btn-column">
+                        <button class="btn btn-return-pagr home"><span
+                                class="btn-icon return-page"></span> <a href="/strategy/toStrategyPage">返回上一页</a></button>
+                    </div>
+
+                </div>
+                <div class="addstrategy">
+                    <div class="submitdata">
+                     
+                            <div class="search-column">
+                                <div class="item">
+                                    <span class="selete-item-name">选择设备:</span>
+                                    <select name="device" id="" class="select screen big device-name">
+
+                                    </select>
+                                    <span class="mark red">*操作策略前请先选择设备</span>
+                                </div>
+                                <div class="item">
+                                    <span class="selete-item-name">选择策略类型:</span>
+                                    <select name="type" id="" class="select screen big strategy-type">
+                                        <option value="all">==选择策略类型==</option>
+                                        <option value="control">设备控制</option>
+                                        <option value="tag">数据标记</option>
+                                    </select>
+                                    <span class="mark red">*请选择策略类型,支持设备控制,数据标记</span>
+                                </div>
+                                <div class="item">
+                                    <span class="selete-item-name">选择传感器:</span>
+                                    <div class="item-case">
+                                        <div class="case-one">
+                                            <select name="sensor" id="" class="select screen model big sensors">
+                                                <option value="all">==选择传感器==</option>
+                                            </select>
+                                            <select name="oper" id="" class="select screen model operation">
+                                                <option value="all">==选择计算表达式==</option>
+                                                <option value="<">小于</option>
+                                                <option value="<=">小于等于</option>
+                                                <option value="==">等于</option>
+                                                <option value=">=">大于等于</option>
+                                                <option value=">">大于</option>
+                                                <option value="!=">不等于</option>
+                                            </select>
+                                            <input type="text" name="valNumber" id="" class="model valNumber" placeholder="请输入数据值">
+                                            <select name="condition" id="" class="select screen model cond small">
+                                                <option value="con">==选择连接条件==</option>
+                                                <option value="&&">并且</option>
+                                                <option value="||">或者</option>
+                                            </select>
+                                            <span class="btn-icon jianhao icon-sensor"></span>
+                                        </div>
+                                    </div>
+                                    <span class="btn-icon add icon-sensor"></span>
+                                </div>
+                                <div class="item">
+                                    <span class="selete-item-name">策略动作:</span>
+                                    <div class="item-case">
+                                        <div class="case-one">
+                                            <select name="actuat" id="" class="select screen tag-disable big model strategy-action">
+                                                <option value="all">==选择执行器==</option>
+                                            </select>
+                                            <select name="action" id="" class="select screen tag-disable model  action">
+                                                <option value="all">==选择动作==</option>
+                                                <option value="open">打开</option>
+                                                <option value="close">关闭</option>
+                                               
+                                            </select>
+                                            <span class="btn-icon jianhao icon-actuat"></span>
+                                        </div>
+                                    </div>
+
+                                    <span class="btn-icon add icon-actuat"></span>
+                                </div>
+                                <div class="item">
+                                    <span class="selete-item-name">定时执行</span>
+                                    <div class="item-case">
+                                        <div class="case-one">
+                                            <select name="times" id="" enable="enable" class="select screen model big strategy-time tag-disable">
+                                                <option value="all">==选择时间==</option>
+                                                <option value="isEveryOnce">每次接收数据执行</option>
+                                                <option value="tick">定时执行</option>
+                                            </select>
+                                            <input type="date" value="2019-11-21" name="date" class="model date tag-disable" /><span> </span><input type="time"
+                                                 value="00:00:00" name="time" class="model time tag-disable" />
+                                            <span class="btn-icon  jianhao icon-time"></span>
+                                        </div>
+                                    </div>
+                                    <span class="btn-icon add icon-time"></span>
+                                </div>
+                                <div class="item button">
+                                    <button class="btn shure">确定</button>
+                                    <button class="btn"><a href="/strategy/toStrategyPage">返回</a></button>
+                                </div>
+           
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../js/means.js"></script>
+    <script src="../../../js/addstrategy.js"></script>
+</body>
+
+</html>

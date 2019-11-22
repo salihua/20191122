@@ -1,0 +1,74 @@
+.wrapper .container .main .device-info{
+    margin: 30px 0;
+    width: 100%;
+}
+.wrapper .container .main .xiax{
+    background: url(../image/dp-default.png);
+}
+.wrapper .container .main .shangx{
+    background: url(../image/dp-zaix.png);
+}
+
+.wrapper .container .main .delete-icon{
+    background: url(../image/delete.png);
+}
+.wrapper .container .main .add-icon{
+    background: url(../image/add.png);
+}
+.wrapper .container .main .createmodel{
+    background: url(../image/mox.png);
+}
+.wrapper .container .main .sensor-info .info{
+    border: 1px solid #F8F8F8;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+.wrapper .container .main .sensor-info .info .sensor-actuat{
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.wrapper .container .main .sensor-info .sensor-head{
+    background-color: #008c8c;
+}
+.wrapper .container .main .sensor-info .info .table-info .text.red{
+    color: #d9534f;
+}
+.wrapper .container .main .sensor-info .info .table-info .text.green{
+    color: #008c8c;
+}
+.wrapper .container .main .sensor-info .info .table-info .m_switch{
+     position: relative;
+     width: 60px;
+     height: 30px;
+     background-color: #dadada;
+     border-radius: 30px;
+     border: none;
+     outline: none;
+     -webkit-appearance: none;
+     transition: all .3s ease;
+     
+} 
+.wrapper .container .main .sensor-info .info .table-info .m_switch::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+.wrapper .container .main .sensor-info .info .table-info .m_switch:checked{
+    background-color: #008c8c;
+}
+.wrapper .container .main .sensor-info .info .table-info .m_switch:checked::after{
+    left: 50%;
+}
+.wrapper .container .main .sensor-info .add-device-form{
+    display: block;
+}

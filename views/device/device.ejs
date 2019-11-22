@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="../../css/reboot.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/device.css">
+   
+</head>
+
+<body>
+    <div class="wrapper">
+        
+        <%- include('../layout/layout.ejs')%>
+      
+        <div class="container">
+            
+            <%- include('../layout/left.ejs')%>
+            
+            <div class="main">
+                <div class="btn-column">
+                    <button class="btn btn-return-pagr home"><span class="btn-icon return-page"></span>返回上一页</button>
+                    <button class="btn btn-modify"><span class="btn-icon modify"></span>修改设备</button>
+                    <button class="btn btn-delete"><span class="btn-icon delete"></span>删除设备</button>
+                    <a href="/strategy/toStrategyPage">
+                        <button class="btn btn-strategy"><span class="btn-icon strategy"></span>策略</button>
+                    </a>
+                    <button class="btn btn-hisdata"><span class="btn-icon hisdata"></span>历史数据</button>
+                    <button class="btn btn-delete all"><span class="btn-icon delete"></span>一键删除传感器/执行器</button>
+                    <button class="btn btn-createmodel"><span class="btn-icon createmodel"></span>生成模型</button>
+                </div>
+                <div class="device-info">
+                    <table border="1" class="table-info">
+                        <thead>
+                            <tr>
+                                <th class="text">所属用户</th>
+                                <th class="text">设备名称</th>
+                                <th class="text">设备ID</th>
+                                <th class="text">设备标识</th>
+                                <th class="text">创建时间</th>
+                                <th class="text">是否在线</th>
+                                <th class="text">设备IP</th>
+                                <th class="text">设备描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text device-username"><%= options.username%></td>
+                                <td class="text device-devicename"><%= options.devicename%></td>
+                                <td class="text device-deviceid"><%= options.deviceid%></td>
+                                <td class="text"><%= options.mac%></td>
+                                <td class="text"><%= options.createtime%></td>
+                                <td class="text">
+                                    
+                                    <% if(options.isOnline){ %>
+                                    <span class="iconfront icon isOnline shangx"></span>
+                                    <span>设备在线<span>
+                                    <% }else{ %>
+                                    <span class="iconfront icon isOnline xiax"></span>
+                                    <span>设备已下线</span>
+                                    <% } %>
+                                </td>
+                                <td class="text deviceaddress"><%= options.ip %></td>
+                                <td class="text"><%= options.describe %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="sensor-info">
+                    <div class="sensor info">
+                        <div class="sensor-head sensor-actuat">
+                            <div class="iconfront icon-left">
+                                <span class="iconfront icon delete-icon delete-sensor-actuat"></span>
+                            </div>
+                            <div class="front">传感器</div>
+                            <div class="iconfront icon-left  btn-add-device">
+                                <span class="iconfront icon add-icon"></span>
+                            </div>
+                        </div>
+                        <div class="add-device-form">
+                            <div class="title">添加传感器</div>
+                            <form action="/home/device/addSensor" method="POST" class="form-login">
+                                <div class="item">
+                                    <span class="device-span">传感器名称:</span>
+                                    <input type="text" class="input-data" name="sensorname" placeholder="请输入传感器名称"
+                                        id="">
+                                </div>
+                                <div class="item">
+                                    <span class="device-span">传感器标识:</span>
+                                    <input type="text" class="input-data" name="sensorident" placeholder="请输入传感器标识" id="">
+                                </div>
+                                <div class="item">
+                                    <span class="device-span">传感器数据类型:</span>
+                                    <select name="data-type" class="select-data-type" id="">
+                                        <option value="布尔值">布尔值(0/1)</option>
+                                        <option value="数值型">数值型</option>
+                                    </select>
+                                </div>
+                                <div class="item-btn">
+                                    <input type="submit" value="确定" name="" class="btn" id="">
+                                    <button type="button" class="btn close-form">关闭</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="specific-info">
+                            
+                            <% if(options.sensorinfo.length<=0){ %>
+                            <div class="default-style">
+                                <button class="btn btn-add-sensor btn-add-device"><span class="btn-icon add"></span>添加传感器</button>
+                            </div>
+                            <% }else{ %>
+                            
+                            <table border="1" class="table-info">
+                                <thead>
+                                    <tr>
+                                        <th class="text">选择传感器</th>
+                                        <th class="text">传感器名称</th>
+                                        <th class="text">传感器标识</th>
+                                        <th class="text">传感器数据类型</th>
+                                        <th class="text">传感器id</th>
+                                        <th class="text">传感器创建时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var x=0;x<options.sensorinfo.length;x++){%>
+                                    <tr>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td class="text"><%=  options.sensorinfo[x].sensorname%></td>
+                                        <td class="text green"><%=  options.sensorinfo[x].sensorident%></td>
+                                        <td class="text"><%=  options.sensorinfo[x].sensordatatype%></td>
+                                        <td class="text"><%=  options.sensorinfo[x].sensorid%></td>
+                                        <td class="text"><%=  options.sensorinfo[x].sensorcreatetime%></td>
+                                    </tr>
+                                    <%}%>
+                                </tbody>
+                            </table>
+
+                            <%}%>
+                          
+                        </div>
+                    </div>
+                    <div class="actuating info">
+                        <div class="sensor-head sensor-actuat">
+                            <div class="iconfront icon-left ">
+                                <span class="iconfront icon delete-icon delete-sensor-actuat"></span>
+                            </div>
+                            <div class="front">执行器</div>
+                            <div class="iconfront icon-left btn-add-device">
+                                <span class="iconfront icon  add-icon"></span>
+                            </div>
+
+                        </div>
+                        <div class="add-device-form">
+                                <div class="title">添加执行器</div>
+                                <form action="/home/device/addActuat" method="POST" class="form-login">
+                                    <div class="item">
+                                        <span class="device-span">执行器名称:</span>
+                                        <input type="text" class="input-data" name="actuatname" placeholder="请输入执行器名称"
+                                            id="">
+                                    </div>
+                                    <div class="item">
+                                        <span class="device-span">执行器标识:</span>
+                                        <input type="text" class="input-data" name="actuatident" placeholder="请输入执行器标识" id="">
+                                    </div>
+                                    <div class="item">
+                                        <span class="device-span">执行器数据类型:</span>
+                                        <select name="data-type" class="select-data-type" id="">
+                                            <option value="布尔值(0/1)">布尔值(0/1)</option>
+                                            <option value="数值型">数值型</option>
+                                        </select>
+                                    </div>
+                                    <div class="item">
+                                        <span class="device-span">执行器命令:</span>
+                                        <input type="text" class="input-data" name="actuatopen" placeholder="打开命令" id="">
+                                        <input type="text" class="input-data" name="actuatclose" placeholder="关闭命令" id="">
+                                    </div>
+                                    <div class="item-btn">
+                                        <input type="submit" value="确定" name="" class="btn" id="">
+                                        <button type="button" class="btn close-form">关闭</button>
+                                    </div>
+                                </form>
+                         </div>
+                        <div class="specific-info">
+                            
+                            <% if(options.actuatinfo.length<=0){ %>
+                            <div class="default-style">
+                                <button class="btn btn-add-actuating btn-add-device"><span class="btn-icon add"></span>添加执行器</button>
+                            </div>
+                            <% }else{ %>
+                            
+                            <table border="1" class="table-info">
+                                <thead>
+                                    <tr>
+                                        <th class="text">选择执行器</th>
+                                        <th class="text">执行器名称</th>
+                                        <th class="text">执行器标识</th>
+                                        <th class="text">执行器数据类型</th>
+                                        <th class="text">执行器id</th>
+                                        <th class="text">命令(开/关)</th>
+                                        <th class="text">执行器创建时间</th>
+                                        <th class="text">操作(开/关)</th>
+                                        <th class="text">信息</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i=0;i<options.actuatinfo.length;i++){%>
+                                    <tr>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td class="text"><%= options.actuatinfo[i].actuatname%></td>
+                                        <td class="text green"><%= options.actuatinfo[i].actuatident%></td>
+                                        <td class="text"><%= options.actuatinfo[i].actuatdatatype%></td>
+                                        <td class="text"><%= options.actuatinfo[i].actuatid%></td>
+                                        <td class="text">
+                                            <%= options.actuatinfo[i].actuatopen%> / <%= options.actuatinfo[i].actuatclose%>
+                                        </td>
+                                        <td class="text"><%= options.actuatinfo[i].actuatcreatetime%></td>
+                                        <td class="text">
+                                          
+                                            <%if(options.isOnline){%>
+                                            <input type="checkbox" name="" class="m_switch" id="">
+                                            <%}else{%>
+                                            <input type="checkbox" name="" disabled class="m_switch" id="">
+                                            <%}%>
+                                           
+        
+                                        </td>
+                                        <td class="text">
+                                            
+                                            <%if(options.isOnline){%>
+                                            <span class="text message green">*设备已上线可以操作</span>
+                                            <%}else{%>
+                                            <span class="text message red">*设备未上线不能操作</span>
+                                            <%}%>
+                                           
+                                        </td>
+                                    </tr>
+                                    <%}%>
+                                </tbody>
+                            </table>
+                           
+                            <%}%>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="loadingdata-model">
+                    <div class="head-msg">
+                        生成数据模型
+                    </div>
+                    <div class="onloading-data">
+                        <p></p>
+                        <div class="loading-msg">正在生成数据模型...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/means.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

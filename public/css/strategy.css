@@ -1,0 +1,103 @@
+
+.wrapper .container .main{
+    
+}
+.wrapper .container .main .strategy-list{
+     font-size: 18px;
+}
+.wrapper .container .main .strategy-list li{
+    background-color: #F8F8F8;
+    transition: all 0.5s linear;
+    border: 1px solid #f8f8f8;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.wrapper .container .main .strategy-list li:hover{
+    background-color: #D8D8D8;
+}
+.wrapper .container .main .strategy-list li  .green-head{
+    background-color: #008c8c;
+    width: 100%;
+    height: 10px;
+}
+.wrapper .container .main .strategy-list li .strategy-item {
+    display: flex;
+    justify-content:space-between;
+}
+.wrapper .container .main .strategy-list  .strategy-item .select-strategy{
+    width: 70px;
+    position: relative;
+}
+.wrapper .container .main .strategy-list  .strategy-item .select-strategy input{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    outline: none;
+}
+.wrapper .container .main .strategy-list  .strategy-item .strategy-info{
+    flex: 1;
+}
+.wrapper .container .main .strategy-list  .strategy-item .strategy-info .condition{
+    display: flex;
+    justify-content: flex-start;
+    margin: 15px 0;
+}
+.wrapper .container .main .strategy-list  .strategy-item .strategy-info .condition .exe{
+    margin-right: 20px;
+}
+.wrapper .container .main .strategy-list  .strategy-item .strategy-info .condition .exe span,
+.wrapper .container .main .strategy-list  .strategy-item .strategy-info span{
+    color: #008c8c;
+}
+.wrapper .container .main .strategy-list  .strategy-item .strategy-info .other-info{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+.wrapper .container .main .strategy-list  .strategy-item .strategy-info .str-info{
+    margin-right: 30px;
+}
+.wrapper .container .main .strategy-list  .strategy-item .strategy-info .isOpen{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+.wrapper .container .main .strategy-list  .strategy-item  .isOpen .img-isopen{
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% 100%;
+}
+.wrapper .container .main .strategy-list  .img-isopen.active{
+    background: url(../image/open1.png);
+}
+.wrapper .container .main .strategy-list  .img-isopen.active + .state{
+    color: #008c8c;
+}
+.wrapper .container .main .strategy-list  .img-isopen.hidden{
+    background: url(../image/no-open1.png);
+}
+.wrapper .container .main .strategy-list  .img-isopen.hidden + .state{
+    color: #2c2c2c;
+}
+.wrapper .container .main .strategy-list  .strategy-item  .isOpen .state{
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    line-height: 30px;
+    margin-left: 30px;
+}
+.wrapper .container .main .default-style.hidden{
+    display: none;
+}
+.wrapper .container .main .pager{
+    margin-top: 0;
+}

@@ -1,0 +1,97 @@
+html{
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background: url(../image/95.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    font-family: "微软雅黑";
+}
+
+.login-content{
+   position: absolute;
+   width: 400px;
+   left: 50%;
+   top: 50%;
+   transform:translateX(-50%) translateY(-50%);
+   background-color: #fff;
+   border: 1px solid #dedede;
+}
+.login-content .head{
+    height: 8px;
+    width: 100%;
+    background-color: #008c8c;
+}
+.login-content .content{
+    padding: 20px 20px;
+    color: #101010;
+}
+.login-content .content .login-title{
+    width: 100%;
+    border-bottom:2px solid #dedede ;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.login-content .content .login-title span{
+    display: block;
+    margin-bottom: 5px;
+}
+.login-content .content .login .item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+.login-content .content .login .item .errmsg{
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    color: #ff5000;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.login-content .content .login .item.btn input{
+    height:35px;
+    background-color: #008c8c;
+    border: 1px solid #008c8c;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    transition: all .5s linear;
+}
+.login-content .content .login .item.btn input:hover{
+    background-color: #088383f1;
+    
+}
+.login-content .content .login .item .item-icon{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-position: left top;
+    background-size: 100% 100%;
+}
+.login-content .content .login .item .item-icon.login-icon{
+    background: url(../image/user-icon.jpg);
+    
+}
+.login-content .content .login .item .item-icon.pwd-icon{
+    background: url(../image/mima-icon.jpg);
+}
+.login-content .content .login .item input{
+    flex: 1;
+    border: 1px solid #dedede;
+    padding-left: 10px;
+    color: #999;
+}
+.login-content .content .login .item input.active{
+    border: 1px solid #ff5000;
+}
+.login-content .content .login .item input::placeholder{
+    color: #999;
+}

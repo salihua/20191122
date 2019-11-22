@@ -1,0 +1,47 @@
+.wrapper .main .info{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.wrapper .main .info .user-info-img{
+    display: inline-block;
+    width: 128px;
+    height: 128px;
+    background: url(../image/user-big.png);
+    background-repeat: no-repeat;
+    background-origin: center;
+    background-size: 100% 100%;
+    margin-right: 60px;
+}
+.wrapper .main .info .right-info li{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.wrapper .main .middfy-info h2{
+   margin-left: 20px;
+   margin-bottom: 5px;
+}
+.wrapper .main .middfy-info .head-green{
+    border-bottom: 2px solid #008c8c;
+}
+.wrapper .main .middfy-info .success{
+     margin-top: 10px;
+     text-align: center;
+     margin-bottom: 10px;
+     font-size: 18px;
+     display: none;
+}
+.wrapper .main .middfy-info .success .success-info{
+    display: block;
+    width: 68px;
+    height: 68px;
+    background: url(../image/success.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+    
+}

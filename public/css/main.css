@@ -1,0 +1,40 @@
+
+.wrapper .container .main .add-device .my-device{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.wrapper .container .main .add-device .my-device .device-item{
+    width: 350px;
+    margin-top: 20px;
+    background-color: #fcfcfc;
+    border-left: 4px solid #e7eaec;
+    border-top: 4px solid #e7eaec;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-right: 40px;
+    transition: all .3s linear;
+}
+.wrapper .container .main .add-device .my-device .device-item:hover{
+    border-top-color: #008c8c;
+    border-left-color: #008c8c;
+}
+.wrapper .container .main .add-device .my-device .device-item .device-name{
+    color: #008c8c;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e7eaec;
+    font-size: 18px;
+    cursor: pointer;
+}
+.wrapper .container .main .add-device .my-device .device-item .info-item{
+    margin: 15px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.wrapper .container .main .add-device .my-device .operation-item button{
+    padding: 5px 10px;
+}

@@ -1,0 +1,46 @@
+.wrapper .container .main .addstrategy .search-column{
+    display: block;
+}
+.wrapper .container .main .addstrategy .search-column .selete-item-name{
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+.wrapper .container .main .addstrategy .search-column .item .big{
+    width: 400px;
+}
+.wrapper .container .main .addstrategy .search-column .item {
+    margin-bottom: 30px;
+}
+.wrapper .container .main .addstrategy .search-column .item .mark.red{
+    color: #d9534f;
+}
+.wrapper .container .main .addstrategy .search-column .item input{
+    width: 150px;
+}
+.wrapper .container .main .addstrategy .search-column .item .btn-icon{
+    display: inline-block;
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  margin-right: 5px;
+}
+.wrapper .container .main .addstrategy .search-column .item .item-case{
+    display: inline-block;
+}
+.wrapper .container .main .btn-icon.add {
+    background: url(../image/new-add.png);
+  }
+.wrapper .container .main .btn-icon.jianhao{
+      background: url(../image/jianhao.png);
+  }
+.wrapper .container .main .addstrategy .search-column .item .btn{
+      width: 120px;
+      margin-right: 20px;
+}
+.wrapper .container .main .addstrategy .search-column .item.button{
+    margin-left: 30px;
+}

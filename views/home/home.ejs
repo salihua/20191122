@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reboot.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--
+        <div class="header">
+            <div class="header-left">
+                <div class="logo"></div>
+                <div class="title"><%= title%></div>
+            </div>
+            <div class="header-right">
+                <div class="user-logo"></div>
+                <div class="user-info">
+                    <span class="user-name"><%= username%></span>
+                    <span class="down-icon"></span>
+                    <div class="down-info active">
+                        <ul>
+                            <li><a href="">用户信息</a></li>
+                            <li><a href="">退出登录</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    -->
+        <%- include('../layout/layout.ejs')%>
+        <div class="container">
+            <%- include('../layout/left.ejs')%>
+            <div class="main">
+                <div class="add-device">
+                    <div>
+                        <div>
+                            <button class="btn btn-add-device"><span class="btn-icon add"></span>新增设备</button>
+                        </div>
+
+                    </div>
+
+                    <div class="add-device-form">
+                        <div class="title">添加设备</div>
+                        <form action="/home/adddevice" method="POST" class="form-login">
+                            <div class="item">
+                                <span class="device-span">设备名称</span>
+                                <input type="text" class="input-data" name="devicename" placeholder="请输入设备名称" id="">
+                            </div>
+                            <div class="item">
+                                <span class="device-span">设备标识(MAC地址)</span>
+                                <input type="text" class="input-data" name="mac" placeholder="请输入设备标识" id="">
+                            </div>
+                            <div class="item">
+                                <span class="device-span">设备描述</span>
+                                <textarea name="describe" id="" class="input-data" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="item-btn">
+                                <input type="submit" value="确定" name="" class="btn" id="">
+                                <button type="button" class="btn close-form">关闭</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="my-device">
+                        <%if(deviceinfo.length>0){%>
+                        <% for(var x=0;x<deviceinfo.length;x++){%>
+                        <div class="device-item">
+                            <div class="device-name headline">
+                                <%= deviceinfo[x].devicename %>
+                            </div>
+                            <div class="device-other-info">
+                                <div class="info-item">
+                                    <span class="device-outline">所属用户:</span>
+                                    <span class="device-msg username"> <%= deviceinfo[x].username%></span>
+
+                                </div>
+                                <div class="info-item">
+                                    <span class="device-outline">设备ID:</span>
+                                    <span class="device-msg deviceid"> <%= deviceinfo[x].deviceid%></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="device-outline">设备标识:</span>
+                                    <span class="device-msg mac"> <%= deviceinfo[x].mac%></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="device-outline">创建时间:</span>
+                                    <span class="device-msg createtime"> <%= deviceinfo[x].createtime%></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="device-outline">设备描述:</span>
+                                    <span class="device-msg describe"><%= deviceinfo[x].describe%></span>
+                                </div>
+                                <div class="operation-item">
+                                    <button class="btn btn-modify"><span class="btn-icon modify"></span>修改设备</button>
+                                    <button class="btn btn-delete"><span class="btn-icon delete"></span>删除设备</button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+                        <%}else{%>
+                        <div class="default-style home-style">
+                             <span>没有设备创建一个设备吧</span>
+                        </div>
+                        <%}%>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/means.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

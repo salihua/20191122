@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据监测</title>
+    <link rel="stylesheet" href="../css/reboot.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+   
+</head>
+<body>
+    <div class="wrap">
+            <div class="header">
+                    <div class="logo"></div>
+                    <div class="title"><%=  title %></div>
+                </div>
+                <div class="login-content">
+                    <div class="head"></div>
+                    <div class="content">
+                        <div class="login-title"> <span>登录</span> </div>  
+                        <div class="login">
+                           <form action="/check" method="post" class="form-login">
+                                <div class="item">
+                                    <span class="item-icon login-icon"></span>
+                                    <input type="text" class="input-data" name="username" id="" placeholder="请输入用户名">
+                                    <span class="errmsg"><%= usermsg%></span>
+                                </div>
+                                <div class="item">
+                                    <span class="item-icon pwd-icon"></span>
+                                    <input type="password" class="input-data" name="password" id="" placeholder="请输入密码">
+                                    <span class="errmsg"><%= pwdmsg%></span>
+                                </div>
+                                <div class="item btn">
+                                    <input type="submit" name="" id="" value="登录">
+                                </div>
+                           </form>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    <script src="../js/means.js"></script>
+   <script src="../js/main.js"></script>
+</body>
+</html>

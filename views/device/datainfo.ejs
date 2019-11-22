@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../css/reboot.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/datainfo.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=rjVWeSWdXsMlGZH5slEDfMDngotD8HiA"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('../layout/layout.ejs')%>
+        <div class="container">
+            <%- include('../layout/left.ejs')%>
+            <div class="main">
+                <div class="feature">
+                    <div class="btn-column">
+                        <button class="btn btn-return-pagr home"><span
+                                class="btn-icon return-page"></span>返回上一页</button>
+                        <a href="/strategy/toStrategyPage">
+                            <button class="btn btn-strategy"><span class="btn-icon strategy"></span>策略</button>
+                        </a>
+                        
+                        <button class="btn btn-zhext zt"><span class="btn-icon zhext"></span><span>折线图</span></button>
+                        <button class="btn btn-delete all"><span class="btn-icon delete"></span>清空数据</button>
+                        <button class="btn btn-order up"><span class="btn-icon sort"></span>升序排列</button>
+                        <button class="btn btn-map table-data"><span class="btn-icon map"></span><span>地图模块</span></button>
+                    </div>
+                    <div class="search-column">
+                        <select name="" id="" class="select screen">
+                            <option value="all">==根据传感器名称筛选==</option>
+                            <option value="fire">火焰</option>
+                            <option value="smoke">烟雾</option>
+                            <option value="temp">温度</option>
+                            <option value="humi">湿度</option>
+                            <option value="position">GPS定位</option>
+                        </select>
+                        <div class="much-select screen">
+                            <input type="text" name="" class="screen-input" id="" placeholder="请输入设备ID,设备名称,或者传感器ID,传感器名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="onloading-data">
+                    <p></p>
+                    <div class="loading-msg">正在格式化数据...</div>
+                </div>
+                <div class="default-style home-style hidden">
+                    <span></span>
+                </div>
+                <div class="table-show">
+                    <div class="data-area">
+                       
+                        <table border="1" class="table-info">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>设备名称</th>
+                                    <th>设备ID</th>
+                                    <th>传感器 名称</th>
+                                    <th>传感器 ID</th>
+                                    <th>传感器 标识</th>
+                                    <th>传感器 数据类型</th>
+                                    <th>传感器 数值</th>
+                                    <th>收数时间</td>
+                                </tr>
+                            </thead>
+                            <tbody class="tbody"></tbody>
+                        </table>
+                    </div>
+                    <div class="pager">
+    
+                    </div>
+                </div>
+                <div class="broken-show hidden" id='broken'>
+
+                </div>
+                <div class="map-show" id='map'></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.common.js"></script>;
+    <script src="../../../js/means.js"></script>
+    <script src="../../../js/datainfo.js"></script>
+</body>
+
+</html>
